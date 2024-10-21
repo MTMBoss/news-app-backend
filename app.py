@@ -1,10 +1,12 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
 import pytz
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)
 timezone = pytz.timezone('Europe/Rome')
 
 @app.route('/updates', methods=['GET'])
